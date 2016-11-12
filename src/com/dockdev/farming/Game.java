@@ -1,0 +1,9 @@
+package com.dockdev.farming;
+
+public class Game {
+
+	public static void main(String[] args) {
+		new Farm();
+	}
+
+}
