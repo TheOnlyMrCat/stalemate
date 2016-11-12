@@ -9,11 +9,19 @@ public class Farm extends Canvas implements Runnable {
 	private Thread thread;
 	private boolean running = false;
 	
+	public enum State {
+		Game, Menu, Paused
+	}
+	
+	public enum Land {
+		Small, Medium, Large, Mansion
+	}
+	
 	@Override
 	public void run() {
 		this.requestFocus();
 		long lastTime = System.nanoTime();
-		double amountOfTicks = 60.0;
+		double amountOfTicks = 100.0;
 		double ns = 1000000000 / amountOfTicks;
 		double delta = 0;
 		long timer = System.currentTimeMillis();
