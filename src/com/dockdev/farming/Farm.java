@@ -3,20 +3,22 @@ package com.dockdev.farming;
 import java.awt.Canvas;
 
 public class Farm extends Canvas implements Runnable {
-	
+
 	public static final long serialVersionUID = 23479874098374918L;
-	
+
 	private Thread thread;
 	private boolean running = false;
-	
+
 	public enum State {
 		Game, Menu, Paused
 	}
-	
+
 	public enum Land {
+		//Be more creative
+		//Translate to 1 2 3 and 4 when using getCost()
 		Small, Medium, Large, Mansion
 	}
-	
+
 	@Override
 	public void run() {
 		this.requestFocus();
@@ -49,14 +51,14 @@ public class Farm extends Canvas implements Runnable {
 
 	private void render() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	private void tick() {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	public synchronized void start() {
 		thread = new Thread(this);
 		thread.start();
