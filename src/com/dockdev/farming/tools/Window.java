@@ -8,7 +8,7 @@ import com.dockdev.farming.Farm;
 
 public class Window extends Canvas{
 	
-	private static final long serialVersionUID = Farm.serialVersionUID;
+	private static final long serialVersionUID = 4583230692281133623L;
 
 	 public Window(int width, int height, String title, Farm game){
 	  JFrame frame = new JFrame(title);
