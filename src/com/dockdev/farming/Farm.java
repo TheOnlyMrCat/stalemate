@@ -7,12 +7,15 @@ import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
 
+import com.dockdev.farming.tools.Handler;
 import com.dockdev.farming.tools.Window;
 
 public class Farm extends Canvas implements Runnable {
 	
 	private static final long serialVersionUID = 4583230692281133623L;
 	public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
+	
+	private Handler handler = new Handler();
 	
 	private Thread thread;
 	private boolean running = false;
@@ -77,13 +80,19 @@ public class Farm extends Canvas implements Runnable {
 			return;
 		}
 		Graphics g = bs.getDrawGraphics();
-
+		
+		for (int i = 0; i < (HEIGHT / 5); i++){
+			for (int j = 0; j < (WIDTH / 16); j++){
+				g.drawImage(back, (j * 16), (i * 96), null);
+			}
+		}
+		
 		g.dispose();
 		bs.show();
 	}
 
 	private void tick() {
-		// TODO Auto-generated method stub
+		handler.tick();
 
 	}
 
