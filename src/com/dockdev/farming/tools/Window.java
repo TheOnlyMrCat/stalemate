@@ -4,13 +4,13 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-import com.dockdev.farming.Farm;
+import com.dockdev.farming.Game;
 
 public class Window extends Canvas{
 	
 	private static final long serialVersionUID = 4583230692281133623L;
 
-	 public Window(int width, int height, String title, Farm game){
+	 public Window(int width, int height, String title, Game game){
 	  JFrame frame = new JFrame(title);
 	  
 	  frame.setPreferredSize(new Dimension(width, height));
