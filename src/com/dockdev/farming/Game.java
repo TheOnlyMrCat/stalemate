@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
 
+import com.dockdev.farming.menus.MainMenu;
 import com.dockdev.farming.tools.Handler;
 import com.dockdev.farming.tools.Window;
 
@@ -16,9 +17,12 @@ public class Game extends Canvas implements Runnable {
 	public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
 	
 	private Handler handler = new Handler();
+	private MainMenu mainmenu = new MainMenu(this);
 	
 	private Thread thread;
 	private boolean running = false;
+	
+	public State GameState = State.Menu;
 	
 	BufferedImage back;
 	
@@ -29,7 +33,7 @@ public class Game extends Canvas implements Runnable {
 	public enum Shop {
 		Warehouse, Animalfeed
 	}
-
+	
 	public enum Land {
 		//Be more creative
 		//Translate to 1 2 3 and 4 when using getCost()
@@ -89,6 +93,12 @@ public class Game extends Canvas implements Runnable {
 			for (int j = 0; j < (WIDTH / 16); j++){
 				g.drawImage(back, (j * 16), (i * 96), null);
 			}
+		}
+		
+		if(GameState == State.Menu){
+			mainmenu.render(g);
+		}else{
+			
 		}
 		
 		g.dispose();
