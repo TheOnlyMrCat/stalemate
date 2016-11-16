@@ -24,8 +24,10 @@ public class Game extends Canvas implements Runnable {
 	private boolean running = false;
 	
 	public State GameState = State.Menu;
+	public Land FarmType = Land.Small;
 	
 	BufferedImage back;
+	BufferedImage land;
 	
 	public enum State {
 		Game, Menu, Paused, Shop
@@ -49,6 +51,7 @@ public class Game extends Canvas implements Runnable {
 		
 		try{
 			back = ImageIO.read(getClass().getResourceAsStream("/background.png"));
+			land = ImageIO.read(getClass().getResourceAsStream("/Solidgreen.png"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -100,7 +103,7 @@ public class Game extends Canvas implements Runnable {
 		
 		if(GameState == State.Menu){
 			mainmenu.render(g);
-		}else{
+		}else if(GameState == State.Game){
 			
 		}
 		
