@@ -18,6 +18,7 @@ public class Game extends Canvas implements Runnable {
 	
 	private Handler handler = new Handler();
 	private MainMenu mainmenu = new MainMenu(this);
+	private Clicking clicking = new Clicking(this);
 	
 	private Thread thread;
 	private boolean running = false;
@@ -41,6 +42,8 @@ public class Game extends Canvas implements Runnable {
 	}
 	
 	public Game(){
+		
+		this.addMouseListener(clicking);
 		
 		new Window((int) WIDTH, (int) HEIGHT, "Chatopia Alpha 0.0.0.1", this);
 		
