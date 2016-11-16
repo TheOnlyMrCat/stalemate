@@ -8,6 +8,7 @@ import com.dockdev.farming.Game;
 
 public class MainMenu {
 	
+	@SuppressWarnings("unused")
 	private Game game;
 	
 	public MainMenu(Game game) {
