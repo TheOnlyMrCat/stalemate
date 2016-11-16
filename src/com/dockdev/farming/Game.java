@@ -23,7 +23,11 @@ public class Game extends Canvas implements Runnable {
 	BufferedImage back;
 	
 	public enum State {
-		Game, Menu, Paused
+		Game, Menu, Paused, Shop
+	}
+	
+	public enum Shop {
+		Warehouse, Animalfeed
 	}
 
 	public enum Land {
